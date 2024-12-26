@@ -1,0 +1,2 @@
+export const text = "Manage your money effortlessly – your go-to app for smarter budgeting and financial planning!";
+export const welcomeText = "Your journey to smarter budgeting and better financial control starts here. Let's make every penny count"
