@@ -40,7 +40,7 @@ export default function Index() {
       <Image source={require('../assets/images/Logo.png')} style={styles.img} />
       <TypeWriter textStyle={styles.welcomeText} text={welcomeText} speed={textSpeed} onComplete={handleTypingComplete} />
       <Animated.View style={[styles.buttonView, animatedStyles]}>
-        <Link replace href="/(onboarding)/loginPage" asChild disabled={!isEnabled} >
+        <Link replace href="/(tabs)/home" asChild disabled={!isEnabled} >
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Start</Text>
           </TouchableOpacity>

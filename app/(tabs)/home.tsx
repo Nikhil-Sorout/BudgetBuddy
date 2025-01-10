@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, Pressable, ScrollView, Dimensions, FlatL
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import TransactionItemCard from '@/components/TransactionItemCard'
+import { Link } from 'expo-router'
 const { width, height } = Dimensions.get('window')
 
 interface transactionItem {
@@ -17,26 +18,26 @@ const home = () => {
 
   let transactionData: transactionItem[] = [
     {
-      id:1,
-      title:'Food',
+      id: 1,
+      title: 'Food',
       date: '24/12/24',
       amount: 500,
       type: 'expense'
     }, {
-      id:2,
-      title:'Freelance',
+      id: 2,
+      title: 'Freelance',
       date: '24/12/24',
       amount: 1000,
       type: 'income'
     }, {
-      id:3,
-      title:'Food',
+      id: 3,
+      title: 'Food',
       date: '24/12/24',
       amount: 500,
       type: 'expense'
     }, {
-      id:4,
-      title:'Food',
+      id: 4,
+      title: 'Food',
       date: '24/12/24',
       amount: 500,
       type: 'expense'
@@ -57,7 +58,9 @@ const home = () => {
 
           {/* Right side of upper header */}
           <View style={styles.rightUpHeader}>
-            <Ionicons name="notifications-outline" size={25} color={'white'} />
+            <Link asChild href={'/others/notifications'}>
+              <Ionicons name="notifications-outline" size={25} color={'white'} />
+            </Link>
             <Image style={styles.profilePic} source={require('../../assets/images/Logo.png')} />
           </View>
         </View>
@@ -262,18 +265,18 @@ const styles = StyleSheet.create({
     color: 'grey',
     fontWeight: '400'
   },
-  noTransaction:{
+  noTransaction: {
     justifyContent: 'center',
-    alignItems:'center',
-    flex:1
+    alignItems: 'center',
+    flex: 1
   },
   noTransactionText: {
     textAlign: 'center',
     color: 'grey',
     fontSize: 16
   },
-  floatingAddBtn:{
-    position:'absolute',
+  floatingAddBtn: {
+    position: 'absolute',
     backgroundColor: '#3077E3',
     justifyContent: 'center',
     alignItems: 'center',
@@ -282,7 +285,7 @@ const styles = StyleSheet.create({
     bottom: 10,
     right: 20
   },
-  floatingAddBtnText:{
+  floatingAddBtnText: {
     fontSize: 34
   }
 })
