@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, Pressable, ScrollView, Dimensions, FlatL
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import TransactionItemCard from '@/components/TransactionItemCard'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 const { width, height } = Dimensions.get('window')
 
 interface transactionItem {
@@ -44,6 +44,9 @@ const home = () => {
     }
   ]
 
+  const handleWalletPress = ()=>{
+    router.push('/others/wallet')
+  }
 
 
   return (
@@ -67,7 +70,7 @@ const home = () => {
 
         {/* Lower header */}
         <View style={styles.lowerHeader}>
-          <Pressable style={styles.walletBtn}>
+          <Pressable style={styles.walletBtn} onPress={handleWalletPress}>
             <Text style={styles.walletText}>Main Wallet</Text>
             <Ionicons name="chevron-down-outline" size={14} color={'white'} />
           </Pressable>
@@ -97,17 +100,17 @@ const home = () => {
           </Pressable>
           <Pressable style={styles.card}>
             <Text style={styles.cardHeader}>🤑</Text>
-            <Text style={styles.cardDesc}>Income</Text>
+            <Text style={styles.cardDesc}>Expense</Text>
             <Text style={styles.cardBalance}>INR 0</Text>
           </Pressable>
           <Pressable style={styles.card}>
             <Text style={styles.cardHeader}>🤑</Text>
-            <Text style={styles.cardDesc}>Income</Text>
+            <Text style={styles.cardDesc}>Pockets</Text>
             <Text style={styles.cardBalance}>INR 0</Text>
           </Pressable>
           <Pressable style={styles.card}>
             <Text style={styles.cardHeader}>🤑</Text>
-            <Text style={styles.cardDesc}>Income</Text>
+            <Text style={styles.cardDesc}>Goals</Text>
             <Text style={styles.cardBalance}>INR 0</Text>
           </Pressable>
         </View>
